@@ -29,14 +29,14 @@ public class LogInTest {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(pswd);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        wait(10,driver);
+        wait(10, driver);
         boolean loggedIn = driver.findElement(By.linkText("Logout")).isDisplayed();
         assertTrue(loggedIn,
                 "Аккаунт не залогировался");
         driver.close();
     }
 
-    public static void wait(int waitTime,WebDriver driver){
+    public static void wait(int waitTime, WebDriver driver) {
         driver.manage().timeouts().implicitlyWait(waitTime, TimeUnit.SECONDS);
     }
 }
